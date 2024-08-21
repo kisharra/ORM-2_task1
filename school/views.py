@@ -7,9 +7,9 @@ from .models import Student
 def students_list(request):
     template = 'school/students_list.html'
     ordering = 'group'
-    students = Student.objects.all().order_by(ordering)
+    students = Student.objects.order_by(ordering)
     context = {
-        'student': students
+        'object_list': students
     }
 
     return render(request, template, context)
